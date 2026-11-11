@@ -1,0 +1,1 @@
+ZMK reference driver: ShiniNet zmk-driver-iqs9151 (MIT), locally modified yuPad43 10RX x 9TX snapshot, 2026-10-30 ATI protocol candidate. Original copyright and Azoteq setting-header attribution retained. See THIRD-PARTY-LICENSE.txt. No PCB design license or PCB design data is included.

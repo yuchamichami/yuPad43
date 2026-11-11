@@ -1,0 +1,363 @@
+{
+  "product": "yuPad43",
+  "units": "mm",
+  "coordinate_system": "bottom/component-side view, connector exit downward; origin at upper-left bounding corner; +X right, +Y down. Z=0 touch-side PCB surface, +Z toward components.",
+  "width": 43.3,
+  "height": 40.3,
+  "pcb_thickness_nominal": 1.0,
+  "corner_radius": 4.0,
+  "top_notch_radius": 0.75,
+  "overall_height_nominal": 3.0,
+  "outline": [
+    {
+      "type": "arc",
+      "start": [
+        39.3,
+        40.3
+      ],
+      "end": [
+        43.3,
+        36.3
+      ],
+      "mid": [
+        42.128428,
+        39.128427
+      ]
+    },
+    {
+      "type": "line",
+      "start": [
+        4.0,
+        40.3
+      ],
+      "end": [
+        39.3,
+        40.3
+      ]
+    },
+    {
+      "type": "arc",
+      "start": [
+        20.9,
+        0.0
+      ],
+      "end": [
+        22.4,
+        0.0
+      ],
+      "mid": [
+        21.65,
+        0.75
+      ]
+    },
+    {
+      "type": "line",
+      "start": [
+        20.9,
+        0.0
+      ],
+      "end": [
+        4.0,
+        0.0
+      ]
+    },
+    {
+      "type": "line",
+      "start": [
+        0.0,
+        4.0
+      ],
+      "end": [
+        0.0,
+        36.3
+      ]
+    },
+    {
+      "type": "arc",
+      "start": [
+        43.3,
+        4.0
+      ],
+      "end": [
+        39.3,
+        0.0
+      ],
+      "mid": [
+        42.128428,
+        1.171572
+      ]
+    },
+    {
+      "type": "arc",
+      "start": [
+        0.0,
+        36.3
+      ],
+      "end": [
+        4.0,
+        40.3
+      ],
+      "mid": [
+        1.171573,
+        39.128427
+      ]
+    },
+    {
+      "type": "arc",
+      "start": [
+        4.0,
+        0.0
+      ],
+      "end": [
+        0.0,
+        4.0
+      ],
+      "mid": [
+        1.171573,
+        1.171572
+      ]
+    },
+    {
+      "type": "line",
+      "start": [
+        43.3,
+        36.3
+      ],
+      "end": [
+        43.3,
+        4.0
+      ]
+    },
+    {
+      "type": "line",
+      "start": [
+        39.3,
+        0.0
+      ],
+      "end": [
+        22.4,
+        0.0
+      ]
+    }
+  ],
+  "mounting_holes": [
+    {
+      "center": [
+        2.5,
+        37.8
+      ],
+      "diameter": 1.152
+    },
+    {
+      "center": [
+        40.8,
+        2.5
+      ],
+      "diameter": 1.152
+    }
+  ],
+  "parts_envelopes": [
+    {
+      "ref": "C1",
+      "min": [
+        21.897696,
+        19.013366,
+        1.0
+      ],
+      "max": [
+        23.01472,
+        19.935486,
+        1.5
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "R3",
+      "min": [
+        15.8,
+        31.5,
+        1.0
+      ],
+      "max": [
+        16.3,
+        32.5,
+        1.35
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "C8",
+      "min": [
+        27.9,
+        26.6,
+        1.0
+      ],
+      "max": [
+        31.1,
+        28.2,
+        2.6
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "J2",
+      "min": [
+        17.95,
+        29.86,
+        1.0
+      ],
+      "max": [
+        25.35,
+        35.96,
+        3.0
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "U1",
+      "min": [
+        15.546712,
+        9.896712,
+        1.0
+      ],
+      "max": [
+        23.703288,
+        18.053288,
+        1.75
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "R4",
+      "min": [
+        11.880022,
+        14.181033,
+        1.0
+      ],
+      "max": [
+        12.802142,
+        15.298057,
+        1.35
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "C2",
+      "min": [
+        22.382506,
+        18.138746,
+        1.0
+      ],
+      "max": [
+        23.49953,
+        19.060866,
+        1.5
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "C3",
+      "min": [
+        21.702229,
+        20.893839,
+        1.0
+      ],
+      "max": [
+        25.276707,
+        23.844621,
+        2.6
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "C6",
+      "min": [
+        25.313307,
+        14.070824,
+        1.0
+      ],
+      "max": [
+        28.887785,
+        17.021606,
+        2.6
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "R2",
+      "min": [
+        25.55,
+        26.5,
+        1.0
+      ],
+      "max": [
+        26.05,
+        27.5,
+        1.35
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "C4",
+      "min": [
+        23.59453,
+        15.452197,
+        1.0
+      ],
+      "max": [
+        24.711554,
+        16.374317,
+        1.5
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "C7",
+      "min": [
+        10.910403,
+        15.930272,
+        1.0
+      ],
+      "max": [
+        11.832523,
+        17.047296,
+        1.5
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "C5",
+      "min": [
+        23.10972,
+        16.326816,
+        1.0
+      ],
+      "max": [
+        24.226744,
+        17.248936,
+        1.5
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    },
+    {
+      "ref": "R1",
+      "min": [
+        24.05,
+        26.5,
+        1.0
+      ],
+      "max": [
+        24.55,
+        27.5,
+        1.35
+      ],
+      "type": "nominal axis-aligned envelope, not exact body"
+    }
+  ],
+  "limitations": [
+    "No solder, board/part manufacturing tolerance, latch-open swept space, FFC, overlay or adhesive included.",
+    "Passive heights use generic nominal CAD models, not guaranteed maximums.",
+    "Mounting holes are not specified as screw fixing holes.",
+    "Outline excludes depanelization burrs."
+  ]
+}

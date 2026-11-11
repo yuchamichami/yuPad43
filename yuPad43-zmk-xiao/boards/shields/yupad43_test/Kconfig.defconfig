@@ -1,0 +1,11 @@
+if SHIELD_YUPAD43_TEST
+
+config ZMK_KEYBOARD_NAME
+    default "yuPad43 ZMK"
+
+# XIAO defaults this to y even without CDC, where .conf cannot override it.
+# Let ZMK register its USB connection-state callback when enabling USB.
+config USB_DEVICE_INITIALIZE_AT_BOOT
+    default n
+
+endif

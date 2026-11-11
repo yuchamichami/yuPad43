@@ -7,5 +7,8 @@ manifest:
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
+    - name: zmk-driver-yupad43
+      url: https://github.com/yuchamichami/zmk-driver-yupad43
+      revision: 95ba2fcc1352ee5e4ebb77a1f01ac7e909bb2d8b
   self:
     path: zmk-yupad43-config

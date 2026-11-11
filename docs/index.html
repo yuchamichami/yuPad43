@@ -11,7 +11,7 @@ body{margin:0;background:#fff;color:#222;font:16px/1.85 -apple-system,BlinkMacSy
 
 <h2 id="connect">1. 接続・裏面図</h2>
 <p>部品のある裏面を見て、コネクタのケーブル出口を下にした図です。1〜6は基板コネクタのはんだ端子番号です。ケーブルを反対側から見た番号とは区別してください。図は部品位置の案内用で、寸法・加工用ではありません。</p>
-<img src="yuPad43-underside.svg" alt="実基板の部品位置・角度に合わせた裏面図。下側中央に6ピンコネクタ。端子は左から1 RDY、2 RST、3 GND、4 3V3、5 SCL、6 SDA。配線や電極は非表示。">
+<img src="images/yuPad43-underside.svg" alt="実基板の部品位置・角度に合わせた裏面図。下側中央に6ピンコネクタ。端子は左から1 RDY、2 RST、3 GND、4 3V3、5 SCL、6 SDA。配線や電極は非表示。">
 <table><tr><th>端子</th><th>信号</th><th>ホストとの接続</th></tr>
 <tr><td>1</td><td>RDY</td><td>GPIO入力。LowのときICが通信可能。</td></tr>
 <tr><td>2</td><td>RST / MCLR</td><td>Lowでリセット。使用しない場合は開放。GND固定にしない。</td></tr>
@@ -25,7 +25,7 @@ body{margin:0;background:#fff;color:#222;font:16px/1.85 -apple-system,BlinkMacSy
 
 <h2 id="mechanical">寸法・ケース設計</h2>
 <p>以下はyuPad43の板厚1.0 mm版の設計値です。寸法図は裏面を見て、ケーブル出口を下にした向き。左上の外接矩形の角が原点で、Xは右、Yは下へ増えます。表側から見た図とは左右が反転します。</p>
-<img src="yuPad43-mechanical.svg" alt="yuPad43外形43.3×40.3 mm、四隅R4、穴と上辺切欠きの寸法図">
+<img src="images/yuPad43-mechanical.svg" alt="yuPad43外形43.3×40.3 mm、四隅R4、穴と上辺切欠きの寸法図">
 <table><tr><th>項目</th><th>設計値・意味</th></tr>
 <tr><td>外形</td><td>43.3 × 40.3 mm。TPS43公称43 × 40 mmと同寸ではありません。</td></tr>
 <tr><td>板厚</td><td>1.0 mm、公称。4層FR-4。</td></tr>
@@ -36,29 +36,29 @@ body{margin:0;background:#fff;color:#222;font:16px/1.85 -apple-system,BlinkMacSy
 <tr><td>コネクタの公称包絡</td><td>X=17.95〜25.35、Y=29.86〜35.96。幅7.4 × 奥行6.1 mm。モデル下端から基板下辺まで4.34 mm。</td></tr>
 <tr><td>部品側の突出高さ</td><td>公称モデルでは最大2.0 mm（コネクタ）。IC 0.75 mm、大きいコンデンサ1.6 mm、小さいコンデンサ0.5 mm、抵抗0.35 mm。</td></tr>
 <tr><td>基板＋部品の厚さ</td><td>公称モデルで3.0 mm。オーバーレイ、接着材、はんだ高さ、公差は含みません。</td></tr></table>
-<p><a href="yuPad43-case-envelope.step">ケース検討用STEP</a>は、実基板の外形・位置決め穴と、部品の外接直方体で構成しています。配線・電極・ビアは含みません。Z=0がタッチ面、基板はZ=0〜1、部品はZ=1〜3です。部品の直方体は公称CADに基づく逃げ検討用で、最大公差込みの保証包絡ではありません。IC・コネクタは簡略モデル、受動部品は汎用モデルに由来します。</p>
+<p><a href="mechanical/yuPad43-case-envelope.step">ケース検討用STEP</a>は、実基板の外形・位置決め穴と、部品の外接直方体で構成しています。配線・電極・ビアは含みません。Z=0がタッチ面、基板はZ=0〜1、部品はZ=1〜3です。部品の直方体は公称CADに基づく逃げ検討用で、最大公差込みの保証包絡ではありません。IC・コネクタは簡略モデル、受動部品は汎用モデルに由来します。</p>
 <h3>ケース側に残す余裕</h3>
 <p>基板と同じ43.3 × 40.3 mmのポケットへ隙間なく押し込む設計は避けます。試作開始値として片側0.3 mmの隙間なら、外接寸法は43.9 × 40.9 mmです。ただしこれはFDMや基板製造の誤差を保証する値ではなく、実際のプリンタ・実基板・切り離し後のバリで確認してください。角も元外形をオフセットして逃がします。</p>
 <p>高さは「カバー厚＋接着材または隙間＋基板1.0 mm＋部品側の必要空間＋組立余裕」で決めます。部品側は公称2.0 mmに余裕を加え、ケースでコンデンサやコネクタを押さえないでください。部品のない部分を使った連続した受け面で支持し、基板がたわまないようにします。</p>
 <h3>カバーとケーブル</h3>
 <p>オーバーレイの材質・厚さはケース設計に合わせて選び、実際の積層状態で感度を確認します。金属や導電性塗装でタッチ面を覆う前提にはしません。密着状態と厚さが局所的に変わらない取り付けにしてください。筐体やカバーを取り替えた場合は同じ設定で体験が維持されるかを再確認します。</p>
 <p>コネクタは0.5 mmピッチ、6ピン、下接点、適合FFC/FPC厚0.3 mmの製品です。ラッチの開閉、ケーブル補強板、抜き差しする指・工具の空間を別に確保します。STEPにはラッチ開状態・ケーブル・曲げ空間を含めていません。基板端まで4.34 mmあることは、全ケーブルをそこで折り曲げられる意味ではありません。補強板を無理に曲げず、採用ケーブルの図面と実物で経路を確認してください。</p>
-<p><a href="yuPad43-mechanical.json">外形・穴・部品包絡の寸法JSON</a>も同梱しています。公称寸法とケース用の余裕は分離して記録してあります。</p>
+<p><a href="mechanical/yuPad43-mechanical.json">外形・穴・部品包絡の寸法JSON</a>も同梱しています。公称寸法とケース用の余裕は分離して記録してあります。</p>
 <h2 id="zmk">2. ZMKで使う</h2>
-<p>同梱の <a href="yuPad43-zmk-driver/">yuPad43-zmk-driver</a> は、このパッド用の設定とATI通信修正を含む、2026-10-30の保存版です。上流モジュールを登録するだけでは、この基板固有のRX/TXマップは適用されません。</p>
-<p><a href="yuPad43-zmk-xiao/">yuPad43-zmk-xiao</a> にXIAO nRF52840用のshield、conf、keymap、west.ymlを収録しています。基準はZMK v0.3.0です。別キーボードへの移植ではI²CバスとGPIOを変更し、ホスト側に既存のinput-listenerがある場合は二重登録を避けてください。</p>
+<p>同梱の <a href="../firmware/zmk-driver/">firmware/zmk-driver</a> は、このパッド用の設定とATI通信修正を含む、2026-10-30の保存版です。上流モジュールを登録するだけでは、この基板固有のRX/TXマップは適用されません。</p>
+<p><a href="../firmware/xiao-example/">firmware/xiao-example</a> にXIAO nRF52840用のshield、conf、keymap、west.ymlを収録しています。基準はZMK v0.3.0です。別キーボードへの移植ではI²CバスとGPIOを変更し、ホスト側に既存のinput-listenerがある場合は二重登録を避けてください。</p>
 <table><tr><th>実機確認時のXIAO配線</th><th>GPIO</th></tr><tr><td>SDA</td><td>P0.16</td></tr><tr><td>SCL</td><td>P1.00</td></tr><tr><td>RDY</td><td>P1.10（active-low）</td></tr><tr><td>RSTの配線先</td><td>P1.11 / D6。保存版はソフトリセットを使用し、reset-gpiosによる駆動はしていません。</td></tr></table>
 <p>この例は標準のD4/D5 I²C配線ではありません。P1.11と競合するUART0を無効にしています。キーマップのD0〜D2は未割当です。</p>
 <pre>west build -s zmk/app -b xiao_ble -d build/yupad43 -- \
   -DSHIELD=yupad43_test \
-  -DZMK_CONFIG=/absolute/path/to/yuPad43-zmk-xiao \
-  -DZMK_EXTRA_MODULES=/absolute/path/to/yuPad43-zmk-driver</pre>
+  -DZMK_CONFIG=/absolute/path/to/yuPad43/firmware/xiao-example \
+  -DZMK_EXTRA_MODULES=/absolute/path/to/yuPad43/firmware/zmk-driver</pre>
 <p>上記はZephyr SDKとwestの依存取得が済んだ環境での指定例です。今回の資料作成では新環境での再ビルドは実施していません。USB用の例はBLE無効です。BLE対応を有効にするだけで販売対象として検証済みになるわけではありません。</p>
 <p>XIAOのUSB起動について、shield内のKconfig.defconfigでUSBの自動初期化を抑制しています。この修正を落とすとUSB状態通知が正常に登録されない既知の問題がありました。ZMK本体のUSB送信条件を迂回するパッチは不要です。</p>
 
 <h2 id="portable">3. ZMK以外へ組み込む</h2>
 <p>RMK・QMK・独自ファームでは、I²C/GPIO/待機処理と、ホストへ送るマウス・スクロール処理を用意します。パッド自身がUSB HIDを直接出力する構成ではありません。</p>
-<p><a href="yuPad43-profile.json">yuPad43-profile.json</a> に初期化ブロック・RX/TXマップ・設定上書きを収録しました。<a href="register-writes.csv">register-writes.csv</a> は基礎ブロックのアドレス別一覧です。CSVだけでは上書き、リセット、校正、通信制御が不足します。</p>
+<p><a href="../data/yuPad43-profile.json">yuPad43-profile.json</a> に初期化ブロック・RX/TXマップ・設定上書きを収録しました。<a href="../data/register-writes.csv">register-writes.csv</a> は基礎ブロックのアドレス別一覧です。CSVだけでは上書き、リセット、校正、通信制御が不足します。</p>
 <table><tr><th>基準値</th><th>設定</th></tr><tr><td>I²Cアドレス</td><td>0x56（7bit表記）</td></tr><tr><td>製品番号</td><td>0x1000から読み、0x09BCを確認</td></tr><tr><td>I²C速度</td><td>100 kHz（実機確認に使用した設定）</td></tr><tr><td>アドレス・16bit値</td><td>いずれもLittle-endian</td></tr><tr><td>RX / TX</td><td>10 / 9。マップはJSONを使用</td></tr><tr><td>座標解像度設定</td><td>X=1300、Y=1192。実測の端到達範囲やDPIを意味しません</td></tr><tr><td>ATI目標 / タッチ閾値</td><td>400 / 開始30・解除26。CoreX用24/22と混同しない</td></tr><tr><td>ALP / SW_IN</td><td>無効。TX45を電極に使用</td></tr></table>
 <h3>通信の約束</h3>
 <p>RDYが物理Lowになった通信窓でアクセスします。読み出しはレジスタアドレス2バイトを送った後、Repeated STARTで読み、最後にSTOPを送ります。例：0x1014を読むアドレスバイトは <code>14 10</code> です。GPIOライブラリの「active-low論理値」と実際のLowを取り違えないでください。</p>
@@ -69,7 +69,7 @@ body{margin:0;background:#fff;color:#222;font:16px/1.85 -apple-system,BlinkMacSy
 <p>スクロール専用化なら検出済みの移動量をホイールへ積算し、少量の移動を整数丸めで捨てないよう残量を保持します。タップや2本指ジェスチャの割当て・有効化はホスト側の実装で決めます。CoreXでのRMK動作実績を、このyuPad43版のRMK検証済みとは扱っていません。</p>
 
 <h2 id="data">4. 読み取れるデータ</h2>
-<p>通常例は0x1014から28バイトを一括で読みます。これは同梱ドライバが使用する範囲です。<a href="decode_frame.py">decode_frame.py</a> はI²Cから取得済みの28バイトを解釈する独立した例です。I²C通信やカーソル出力は含みません。</p>
+<p>通常例は0x1014から28バイトを一括で読みます。これは同梱ドライバが使用する範囲です。<a href="../data/decode_frame.py">decode_frame.py</a> はI²Cから取得済みの28バイトを解釈する独立した例です。I²C通信やカーソル出力は含みません。</p>
 <table><tr><th>アドレス</th><th>形式</th><th>内容</th></tr><tr><td>0x1014 / 0x1016</td><td>int16 / int16</td><td>相対X / Y移動量</td></tr><tr><td>0x101C / 0x101E</td><td>uint16 / uint16</td><td>1本指 / 2本指ジェスチャのフラグ</td></tr><tr><td>0x1020</td><td>uint16</td><td>Info Flags：bit3 ATI error、bit7 Show Reset</td></tr><tr><td>0x1022</td><td>uint16</td><td>Trackpad Flags：bit0〜3 指数、bit8/9 指1/2のconfidence</td></tr><tr><td>0x1024 / 0x1026</td><td>uint16 / uint16</td><td>指1 X / Y</td></tr><tr><td>0x1028 / 0x102A</td><td>uint16 / uint16</td><td>指1の信号強度 / 面積</td></tr><tr><td>0x102C / 0x102E</td><td>uint16 / uint16</td><td>指2 X / Y</td></tr></table>
 <p>指が離れたフレームの座標を新しいタッチとして使用しないでください。指の数とconfidenceを併せて扱い、移動量は符号付きで読みます。信号強度は押圧のニュートン値ではありません。座標の上下左右は装着方向に応じて反転・入替えし、実物を右・下へなぞって確認します。</p>
 <p>通常のカーソルやスクロールには電極ごとの値は不要です。検査用にはCount・Reference・Deltaの10×9マトリクスを別途読み出せますが、通常フレームとは別レジスタです。取得頻度が操作遅延へ影響するため、常用ファームと検査モードを分けます。</p>
@@ -80,10 +80,10 @@ body{margin:0;background:#fff;color:#222;font:16px/1.85 -apple-system,BlinkMacSy
 <p>表面材を変更した場合、まずタッチ閾値を調整します。ATI目標は感度の強弱や製品の優劣を表す数字ではありません。初期化・校正・座標・USB/BLE出力を一度に変更せず、比較できる状態を保存してください。</p>
 
 <h2 id="files">6. 収録物と一次資料</h2>
-<ul><li><a href="yuPad43-underside.svg">裏面図 SVG</a>：配線・電極を含まない編集可能な図。</li><li><a href="yuPad43-profile.json">設定 JSON</a> / <a href="register-writes.csv">レジスタ一覧 CSV</a>：他ファームへの移植用。</li><li><a href="decode_frame.py">フレーム解釈例</a>：通常出力の型とフラグ。</li><li>ZMK参考ドライバ・XIAO用設定例：同梱フォルダ。</li><li><a href="THIRD-PARTY-LICENSE.txt">第三者コードのライセンス</a> / <a href="source-notice.txt">出典</a>。</li></ul>
+<ul><li><a href="images/yuPad43-underside.svg">裏面図 SVG</a>：配線・電極を含まない編集可能な図。</li><li><a href="../data/yuPad43-profile.json">設定 JSON</a> / <a href="../data/register-writes.csv">レジスタ一覧 CSV</a>：他ファームへの移植用。</li><li><a href="../data/decode_frame.py">フレーム解釈例</a>：通常出力の型とフラグ。</li><li>ZMK参考ドライバ・XIAO用設定例：同梱フォルダ。</li><li><a href="licenses/THIRD-PARTY-LICENSE.txt">第三者コードのライセンス</a> / <a href="licenses/source-notice.txt">出典</a>。</li></ul>
 <p><a href="https://www.azoteq.com/images/stories/pdf/IQS9150_IQS9151_datasheet.pdf">Azoteq IQS9150/IQS9151データシート</a>：通信は12章、ATIは5.8.3、出力はAppendix Aを参照。今回照合したローカル資料はv1.2です。このパッドには同梱プロフィールを使用してください。</p>
 
 <h2 id="credits">使用ソフトウェア・ライセンス</h2>
 <p>同梱のZMK用ドライバは、<a href="https://github.com/ShiniNet/zmk-driver-iqs9151">ShiniNet / zmk-driver-iqs9151</a>（MIT License）を基に、このパッド向けの電極設定・初期化設定・ATI通信処理を変更しています。</p>
-<p>Copyright (c) 2026 ShiniNet<br>ライセンス全文は <a href="THIRD-PARTY-LICENSE.txt">THIRD-PARTY-LICENSE.txt</a> に収録しています。</p>
+<p>Copyright (c) 2026 ShiniNet<br>ライセンス全文は <a href="licenses/THIRD-PARTY-LICENSE.txt">THIRD-PARTY-LICENSE.txt</a> に収録しています。</p>
 </main></html>

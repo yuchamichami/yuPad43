@@ -24,7 +24,7 @@ west build -s zmk/app -b xiao_ble -d build/yupad43 -- \
   -DZMK_EXTRA_MODULES=/absolute/path/to/zmk-driver-yupad43
 ```
 
-Zephyr SDKとwestの依存取得が済んだ環境で実行してください。この設定例はUSB用で、BLEは無効です。BLEでの動作は未検証です。
+Zephyr SDKとwestの依存取得が済んだ環境で実行してください。この設定例はUSB用で、BLEは無効です。
 
 XIAO用shieldの `Kconfig.defconfig` にはUSB起動に必要な設定が含まれるため、移植時も引き継いでください。
 

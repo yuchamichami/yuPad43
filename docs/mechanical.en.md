@@ -22,13 +22,17 @@ All dimensions are in millimeters.
 | Component height above PCB | Maximum 2.0 at the connector. IC: 0.75; large capacitors: 1.6; small capacitors: 0.5; resistors: 0.35. |
 | PCB plus components | 3.0 nominal. Add space for the overlay, adhesive, solder, and manufacturing tolerances. |
 
-## STEP model
+## 3D model with components
 
-The [case envelope STEP](mechanical/yuPad43-case-envelope.step) contains the board outline, locating holes, and rectangular component envelopes. It omits traces, electrodes, and vias.
+[Download STEP](mechanical/yuPad43-case-envelope.step)
 
-Z=0 is the touch surface. The board occupies Z=0–1 and components extend to Z=3. The component envelopes are based on nominal CAD models; allow additional clearance for manufacturing and assembly. The IC and connector use simplified models, and passive components use generic models.
+![yuPad43 3D model with components](images/yuPad43-3d.png)
 
-The [dimension JSON](mechanical/yuPad43-mechanical.json) provides outline, hole, and component-envelope measurements. Nominal dimensions and suggested case clearances are recorded separately.
+The model includes the board outline, locating holes, and all 14 components at their PCB CAD positions and angles. It omits traces, electrodes, and vias. The IC and connector use simplified dimensional models; passive components use nominal models.
+
+The STEP origin is at the upper-left corner of the bottom-view bounding rectangle, on the touch surface. X increases to the right, Y upward, and Z toward the components. **STEP Y is the negative of drawing Y.** The board occupies Z=0–1 mm, and components extend to Z=3 mm.
+
+The [dimension JSON](mechanical/yuPad43-mechanical.json) provides drawing coordinates and axis-aligned component bounds for clearance calculations.
 
 ## Case clearance and support
 

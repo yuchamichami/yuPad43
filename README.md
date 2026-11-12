@@ -53,7 +53,7 @@ ZMK設定例はUSB接続用です。
 
 - [ZMKドライバ](https://github.com/yuchamichami/zmk-driver-yupad43) / [XIAO nRF52840用設定例](firmware/xiao-example/)
 - [設定JSON](data/yuPad43-profile.json) / [レジスタ一覧CSV](data/register-writes.csv) / [出力の解釈例](data/decode_frame.py)
-- [ケース検討用STEP](docs/mechanical/yuPad43-case-envelope.step)
+- [部品付きSTEPモデル](docs/mechanical/yuPad43-case-envelope.step)
 
 このリポジトリでは接続・組込み用の情報を提供しています。基板の回路図・配線・製造データは含みません。
 

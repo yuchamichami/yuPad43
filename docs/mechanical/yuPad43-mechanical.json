@@ -359,5 +359,8 @@
     "Passive heights use generic nominal CAD models, not guaranteed maximums.",
     "Mounting holes are not specified as screw fixing holes.",
     "Outline excludes depanelization burrs."
-  ]
+  ],
+  "model_revision": 2,
+  "step_coordinate_system": "Right-handed CAD frame. Origin at upper-left bounding corner of bottom view on touch plane. +X right, +Y up, +Z toward components. STEP X=diagram X, STEP Y=-diagram Y, STEP Z=diagram Z.",
+  "step_contents": "PCB outline and locating holes plus 14 component models at PCB positions and angles; no traces, electrodes, vias or copper."
 }

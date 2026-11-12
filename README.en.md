@@ -53,7 +53,7 @@ The ZMK example is configured for USB.
 
 - [ZMK driver](https://github.com/yuchamichami/zmk-driver-yupad43/blob/main/README.en.md) / [XIAO nRF52840 configuration example](firmware/xiao-example/)
 - [Configuration JSON](data/yuPad43-profile.json) / [Register writes CSV](data/register-writes.csv) / [Frame decoder example](data/decode_frame.py)
-- [STEP model for case design](docs/mechanical/yuPad43-case-envelope.step)
+- [STEP model with components](docs/mechanical/yuPad43-case-envelope.step)
 
 This repository provides connection and firmware integration resources. PCB schematics, routing, and manufacturing files are not included.
 

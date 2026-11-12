@@ -9,6 +9,6 @@ manifest:
       import: app/west.yml
     - name: zmk-driver-yupad43
       url: https://github.com/yuchamichami/zmk-driver-yupad43
-      revision: 95ba2fcc1352ee5e4ebb77a1f01ac7e909bb2d8b
+      revision: 5dfa6d3c480ebb5162f5425fa367823d73ddb13e
   self:
     path: zmk-yupad43-config

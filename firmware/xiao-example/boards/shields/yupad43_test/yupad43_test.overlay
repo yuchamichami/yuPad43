@@ -1,3 +1,4 @@
+#include <input/processors.dtsi>
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/i2c/i2c.h>
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
@@ -50,10 +51,11 @@
     trackpad_listener {
         compatible = "zmk,input-listener";
         device = <&iqs9151>;
+        input-processors = <&zip_scroll_scaler 1 12>;
         status = "okay";
     };
 
-    /* Free front pins: D0=USB, D1=BLE, D2=clear BLE pairing. */
+    /* Optional key inputs; unassigned in the example keymap. */
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;

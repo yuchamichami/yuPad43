@@ -1,5 +1,7 @@
 # 他のファームウェアへの組込み
 
+日本語 | [English](integration.en.md)
+
 RMK・QMK・独自ファームでは、I²C/GPIO/待機処理と、ホストへ送るマウス・スクロール処理を用意します。パッド自身がUSB HIDを直接出力する構成ではありません。
 
 [yuPad43-profile.json](../data/yuPad43-profile.json) に初期化ブロック・RX/TXマップ・設定上書きを収録しました。[register-writes.csv](../data/register-writes.csv) は基礎ブロックのアドレス別一覧です。CSVだけでは上書き、リセット、校正、通信制御が不足します。

@@ -4,15 +4,15 @@
 
 yuPad43 is a 43.3 × 40.3 mm touchpad built around the IQS9151. It connects to a keyboard or microcontroller over I²C for pointer control and scrolling.
 
-- **Use with ZMK:** [Setup and configuration example](docs/zmk.md) (Japanese)
-- **Integrate with other firmware:** [Communication, configuration data, and output format](docs/integration.md) (Japanese)
-- **Design a case:** [Dimensions, component heights, and STEP model](docs/mechanical.md) (Japanese)
+- **Use with ZMK:** [Setup and configuration example](docs/zmk.en.md)
+- **Integrate with other firmware:** [Communication, configuration data, and output format](docs/integration.en.md)
+- **Design a case:** [Dimensions, component heights, and STEP model](docs/mechanical.en.md)
 
 ## Connection
 
 The illustration shows the component side, with the connector's cable opening facing down. Numbers 1–6 identify the connector's solder terminals on the board; they are not a cable-side numbering reference. The illustration shows component placement and is not a dimensioned manufacturing drawing.
 
-![Component-side view with the six-pin connector at the bottom center. From left to right: 1 RDY, 2 RST, 3 GND, 4 3V3, 5 SCL, 6 SDA. Traces and electrodes are omitted.](docs/images/yuPad43-underside.svg)
+![Component-side view with the six-pin connector at the bottom center. From left to right: 1 RDY, 2 RST, 3 GND, 4 3V3, 5 SCL, 6 SDA. Traces and electrodes are omitted.](docs/images/yuPad43-underside.en.svg)
 
 | Pin | Signal | Host connection |
 | --- | --- | --- |

@@ -1,5 +1,7 @@
 # ZMKで使う
 
+日本語 | [English](zmk.en.md)
+
 [zmk-driver-yupad43](https://github.com/yuchamichami/zmk-driver-yupad43) を使用します。yuPad43の電極設定と初期化処理を含むZMKモジュールです。
 
 [firmware/xiao-example](../firmware/xiao-example/) にXIAO nRF52840用のshield、conf、keymap、west.ymlを収録しています。基準はZMK v0.3.0です。別キーボードへの移植ではI²CバスとGPIOを変更し、ホスト側に既存のinput-listenerがある場合は二重登録を避けてください。
@@ -35,10 +37,6 @@ XIAO用shieldの `Kconfig.defconfig` にはUSB起動に必要な設定が含ま�
 ## 起動と校正
 
 起動時は製品番号の確認、設定書込み、ATI（電極の自動校正）の完了待ちを行います。起動中はタッチ面から指を離してください。
-
-校正完了後のATI品質警告があっても、入力を継続します。警告による起動停止や再校正の繰り返しは行いません。ログを有効にすると警告の発生・解消を記録します。通信できない場合や校正が完了しない場合は初期化に失敗します。警告を許容する処理は、断線やはんだ不良を修復するものではありません。
-
-ICが動作中にリセットされた場合の設定再適用は未対応です。反応がなくなった場合は電源を入れ直してください。
 
 [接続・使い方へ戻る](../README.md)
 

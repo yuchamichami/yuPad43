@@ -51,6 +51,9 @@ The ZMK example is configured for USB.
 
 ## Resources
 
+- [Datasheet (PDF)](docs/datasheet/yuPad43-datasheet.pdf)
+- [ZMK integration prompt (Japanese)](docs/zmk-integration-prompt.md)
+
 - [ZMK driver](https://github.com/yuchamichami/zmk-driver-yupad43/blob/main/README.en.md) / [XIAO nRF52840 configuration example](firmware/xiao-example/)
 - [Configuration JSON](data/yuPad43-profile.json) / [Register writes CSV](data/register-writes.csv) / [Frame decoder example](data/decode_frame.py)
 - [STEP model with components](docs/mechanical/yuPad43-case-envelope.step)

@@ -51,6 +51,9 @@ ZMK設定例はUSB接続用です。
 
 ## 資料
 
+- [データシート（PDF・英語）](docs/datasheet/yuPad43-datasheet.pdf)
+- [ZMKキーボードへの組み込み用プロンプト](docs/zmk-integration-prompt.md)
+
 - [ZMKドライバ](https://github.com/yuchamichami/zmk-driver-yupad43) / [XIAO nRF52840用設定例](firmware/xiao-example/)
 - [設定JSON](data/yuPad43-profile.json) / [レジスタ一覧CSV](data/register-writes.csv) / [出力の解釈例](data/decode_frame.py)
 - [部品付きSTEPモデル](docs/mechanical/yuPad43-case-envelope.step)

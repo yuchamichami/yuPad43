@@ -38,5 +38,7 @@ XIAO用shieldの `Kconfig.defconfig` にはUSB起動に必要な設定が含ま�
 
 起動時は製品番号の確認、設定書込み、ATI（電極の自動校正）の完了待ちを行います。起動中はタッチ面から指を離してください。
 
+[別のキーボードへの組み込み用プロンプト](zmk-integration-prompt.md)
+
 [接続・使い方へ戻る](../README.md)
 

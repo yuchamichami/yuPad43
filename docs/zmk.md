@@ -17,12 +17,19 @@
 
 ドライバは別リポジトリです。付属の `west.yml` は検証基準のコミットを固定して取得します。
 
-既存のwest環境では、設定例のmanifestを取り込んで `west update` を実行してください。手動で取得したモジュールを使う場合は、以下の `ZMK_EXTRA_MODULES` にその保存先を指定します。
+既存のwest環境では、設定例のmanifestを取り込んで `west update` を実行してください。続いて、ワークスペースのルートで次のコマンドを一度実行します。設定例に付属するZMK v0.3.0用のパッチで、縦横のスクロール量をPCが指定するホイール解像度に合わせます。
+
+```sh
+YUPAD_CONFIG="/absolute/path/to/yuPad43/firmware/xiao-example"
+git -C zmk apply "$YUPAD_CONFIG/patches/zmk-v0.3.0-wheel-resolution.patch"
+```
+
+手動で取得したドライバを使う場合は、`ZMK_EXTRA_MODULES` にその保存先を指定してビルドします。
 
 ```sh
 west build -s zmk/app -b xiao_ble -d build/yupad43 -- \
   -DSHIELD=yupad43_test \
-  -DZMK_CONFIG=/absolute/path/to/yuPad43/firmware/xiao-example \
+  -DZMK_CONFIG="$YUPAD_CONFIG" \
   -DZMK_EXTRA_MODULES=/absolute/path/to/zmk-driver-yupad43
 ```
 

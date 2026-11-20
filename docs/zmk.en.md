@@ -23,12 +23,19 @@ When adapting the example to another keyboard, update the I²C bus and GPIO assi
 
 Install the Zephyr SDK and the dependencies for your ZMK west workspace. The example's `west.yml` pins the driver to a specific commit. Incorporate the manifest into your workspace and run `west update`.
 
-For a locally checked-out driver, specify its location with `ZMK_EXTRA_MODULES`:
+From the workspace root, apply the included patch once to your ZMK v0.3.0 checkout. It scales vertical and horizontal scrolling to the wheel resolution requested by the host.
+
+```sh
+YUPAD_CONFIG="/absolute/path/to/yuPad43/firmware/xiao-example"
+git -C zmk apply "$YUPAD_CONFIG/patches/zmk-v0.3.0-wheel-resolution.patch"
+```
+
+To build with a local copy of the driver, set `ZMK_EXTRA_MODULES` to its path.
 
 ```sh
 west build -s zmk/app -b xiao_ble -d build/yupad43 -- \
   -DSHIELD=yupad43_test \
-  -DZMK_CONFIG=/absolute/path/to/yuPad43/firmware/xiao-example \
+  -DZMK_CONFIG="$YUPAD_CONFIG" \
   -DZMK_EXTRA_MODULES=/absolute/path/to/zmk-driver-yupad43
 ```
 

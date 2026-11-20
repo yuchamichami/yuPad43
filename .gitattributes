@@ -1,3 +1,4 @@
 * text=auto
 *.png binary
 *.step -text
+*.patch whitespace=-blank-at-eol,-blank-at-eof

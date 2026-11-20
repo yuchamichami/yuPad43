@@ -1,0 +1,58 @@
+diff --git a/app/src/pointing/input_listener.c b/app/src/pointing/input_listener.c
+--- a/app/src/pointing/input_listener.c
++++ b/app/src/pointing/input_listener.c
+@@ -89,8 +89,8 @@
+     };
+ 
+ #if IS_ENABLED(CONFIG_ZMK_POINTING_SMOOTH_SCROLLING)
+-    int16_t wheel_remainder;
+-    int16_t h_wheel_remainder;
++    int16_t wheel_remainder[ZMK_ENDPOINT_COUNT];
++    int16_t h_wheel_remainder[ZMK_ENDPOINT_COUNT];
+ #endif // IS_ENABLED(CONFIG_ZMK_POINTING_SMOOTH_SCROLLING)
+ 
+     struct input_listener_processor_data base_processor_data;
+@@ -240,26 +240,26 @@
+ 
+ #if IS_ENABLED(CONFIG_ZMK_POINTING_SMOOTH_SCROLLING)
+ static void apply_resolution_scaling(struct input_listener_data *data, struct input_event *evt) {
+-    int16_t *remainder;
+-    uint8_t div;
+-
+-    switch (evt->code) {
+-    case INPUT_REL_WHEEL:
+-        remainder = &data->wheel_remainder;
+-        div = (16 - zmk_pointing_resolution_multipliers_get_current_profile().wheel);
+-        break;
+-    case INPUT_REL_HWHEEL:
+-        remainder = &data->h_wheel_remainder;
+-        div = (16 - zmk_pointing_resolution_multipliers_get_current_profile().hor_wheel);
+-        break;
+-    default:
++    if (evt->type != INPUT_EV_REL ||
++        (evt->code != INPUT_REL_WHEEL && evt->code != INPUT_REL_HWHEEL)) {
+         return;
+     }
+ 
+-    int16_t val = evt->value + *remainder;
+-    int16_t scaled = val / (int16_t)div;
+-    *remainder = val - (scaled * (int16_t)div);
+-    evt->value = val;
++    struct zmk_endpoint_instance endpoint = zmk_endpoints_selected();
++    int index = zmk_endpoint_instance_to_index(endpoint);
++    struct zmk_pointing_resolution_multipliers profile =
++        zmk_pointing_resolution_multipliers_get_profile(endpoint);
++    bool vertical = evt->code == INPUT_REL_WHEEL;
++    uint8_t multiplier = 1 + (vertical ? profile.wheel : profile.hor_wheel);
++    int16_t *remainder = vertical ? &data->wheel_remainder[index] : &data->h_wheel_remainder[index];
++
++    /* The descriptor maps logical 0..15 to physical 1..16. Bound oversized
++     * input events to avoid overflow even before they reach the 16-bit report. */
++    int32_t delta = CLAMP(evt->value, (INT16_MIN - 2) * 16, (INT16_MAX + 2) * 16);
++    int32_t numerator = delta * multiplier + *remainder;
++    int32_t scaled = numerator / 16;
++    evt->value = CLAMP(scaled, INT16_MIN, INT16_MAX);
++    *remainder = scaled == evt->value ? numerator % 16 : 0;
+ }
+ #endif // IS_ENABLED(CONFIG_ZMK_POINTING_SMOOTH_SCROLLING)
+ 

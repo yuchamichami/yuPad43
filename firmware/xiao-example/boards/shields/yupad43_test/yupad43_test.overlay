@@ -51,7 +51,7 @@
     trackpad_listener {
         compatible = "zmk,input-listener";
         device = <&iqs9151>;
-        input-processors = <&zip_scroll_scaler 1 12>;
+        input-processors = <&zip_scroll_scaler 1 16>;
         status = "okay";
     };
 

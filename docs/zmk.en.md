@@ -36,7 +36,33 @@ The example uses USB and disables BLE. Keep the USB startup settings in the shie
 
 ## Operation
 
-Use one finger to move the pointer and two fingers to scroll vertically or horizontally. Scroll level **0 (standard)** is the default. Pointer and scroll inertia are disabled.
+Use one finger to move the pointer and two fingers to scroll in either direction. A quick two-finger flick keeps the page moving briefly after you lift your fingers. Touch the pad again to stop it.
+
+The XIAO example uses a coordinate range of 1300 × 1192 and **scroll level 0 (standard)**. ZMK’s `zip_scroll_scaler 1 16` sets the rate on both axes. Pointer inertia and pinch gestures are off.
+
+### Pinch to zoom
+
+For apps that use Ctrl + mouse wheel to zoom, set `CONFIG_INPUT_IQS9151_2F_PINCH_ENABLE=y` in `yupad43_test.conf` and append this to `yupad43_test.keymap`. It holds Left Ctrl during a pinch. Regular two-finger scrolling still sends just the wheel.
+
+```dts
+#include <dt-bindings/zmk/keys.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    yupad_pinch_ctrl: yupad_pinch_ctrl {
+        compatible = "zmk,input-processor-behaviors";
+        #input-processor-cells = <0>;
+        codes = <INPUT_BTN_7>;
+        bindings = <&kp LCTRL>;
+    };
+};
+
+&{/trackpad_listener} {
+    input-processors = <&yupad_pinch_ctrl>, <&zip_scroll_scaler 1 16>;
+};
+```
+
+## Startup
 
 At startup, the driver checks the product ID, writes the configuration, and waits for ATI (automatic electrode calibration) to complete. Keep your fingers off the touch surface during startup.
 

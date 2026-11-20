@@ -32,7 +32,31 @@ XIAO用shieldの `Kconfig.defconfig` にはUSB起動に必要な設定が含ま�
 
 ## カーソルとスクロール
 
-設定例は1本指でカーソル、2本指で縦横スクロールを操作します。スクロール量は **0（標準）** を基準とします。カーソル・スクロールの慣性は無効です。
+1本指でカーソルを動かし、2本指で縦横にスクロールします。2本指で軽く弾くと、指を離した後も少しスクロールが続きます。止めたいときはパッドに触れてください。
+
+設定例の座標範囲は1300 × 1192、スクロール量は **0（標準）** です。縦横の倍率はZMKの `zip_scroll_scaler 1 16` で設定します。カーソル慣性とピンチ操作は無効です。
+
+### ピンチでズームする
+
+Ctrl＋ホイールでズームできるアプリ向けの設定です。XIAOの `yupad43_test.conf` を `CONFIG_INPUT_IQS9151_2F_PINCH_ENABLE=y` に変更し、次を `yupad43_test.keymap` の末尾に追加します。ピンチ中だけ左Ctrlを押した状態になり、普通の2本指スクロールではホイールだけを送ります。
+
+```dts
+#include <dt-bindings/zmk/keys.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    yupad_pinch_ctrl: yupad_pinch_ctrl {
+        compatible = "zmk,input-processor-behaviors";
+        #input-processor-cells = <0>;
+        codes = <INPUT_BTN_7>;
+        bindings = <&kp LCTRL>;
+    };
+};
+
+&{/trackpad_listener} {
+    input-processors = <&yupad_pinch_ctrl>, <&zip_scroll_scaler 1 16>;
+};
+```
 
 ## 起動と校正
 

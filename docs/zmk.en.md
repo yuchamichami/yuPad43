@@ -43,9 +43,9 @@ The example uses USB and disables BLE. Keep the USB startup settings in the shie
 
 ## Operation
 
-Use one finger to move the pointer and two fingers to scroll in either direction. A quick two-finger flick keeps the page moving briefly after you lift your fingers. Touch the pad again to stop it.
+The pointer follows one finger and stops when you lift it. Use two fingers to scroll vertically or horizontally. A quick flick keeps the page moving briefly. Touch the pad again to stop it.
 
-The XIAO example uses a coordinate range of 1300 × 1192 and **scroll level 0 (standard)**. ZMK’s `zip_scroll_scaler 1 16` sets the rate on both axes. Pointer inertia and pinch gestures are off.
+The driver uses a coordinate range of 1300 × 1192 and enables inertia only for scrolling. Pinch gestures are off by default. The XIAO example uses these settings. To get the same **scroll level 0 (standard)** on another keyboard, apply `zip_scroll_scaler 1 16` once in the touchpad’s ZMK input listener.
 
 ### Pinch to zoom
 
